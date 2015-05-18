@@ -43,7 +43,7 @@ Pagina que muestra las funciones del superadministrador.
                             <h:panelGrid id="local" columns="2" style="text-align: left">
                                 <p:outputLabel value="Nombre: "/>
                                 <p:inputText id="nombre" placeholder="Nombre" 
-                                             value="#{controladorLocal.local.nombre}"/>
+                                             value="#{controladorLocal.local.nombre}" required="true"/>
                                 <p:outputLabel value="Alias: "/>
                                 <p:inputText id="alias" placeholder="Alias" 
                                              value="#{controladorLocal.local.alias}"/>
@@ -52,22 +52,22 @@ Pagina que muestra las funciones del superadministrador.
                                              value="#{controladorLocal.local.especialidad}"/>
                                 <p:outputLabel value="Lugar:"/>
                                 <p:selectOneMenu effect="fade" style="width: 100%" 
-                                                 value="#{controladorLocal.idLugar}" >
+                                                 value="#{controladorLocal.idLugar}" required="true" >
                                     <f:selectItem itemLabel="Seleccione un lugar" itemValue="" />
                                     <f:selectItems value="#{controladorLocal.lugares}" var="_lugar"  
                                                    itemLabel="#{_lugar.nombre}" itemValue="#{_lugar.id}" />
                                 </p:selectOneMenu>
                                 <p:outputLabel value="Latitud: "/>
                                 <p:inputText id="latitud" placeholder="Latitud" 
-                                             value="#{controladorLocal.local.latitud}"/>
+                                             value="#{controladorLocal.local.latitud}" required="true"/>
                                 <p:outputLabel value="Longitud: "/>
                                 <p:inputText id="longitud" placeholder="Longitud" 
-                                             value="#{controladorLocal.local.longitud}"/>
+                                             value="#{controladorLocal.local.longitud}" required="true"/>
                             </h:panelGrid>
                             <p:outputLabel value="Descripción"/>
                             <p:inputTextarea id="descripcion" cols="37" rows="2"
                                              placeholder="Descripción" 
-                                             value="#{controladorLocal.local.descripción}"/>
+                                             value="#{controladorLocal.local.descripción}" required="true"/>
                         </h:panelGrid>
                         <h:panelGrid columns="1">
                             <h:form>
@@ -77,7 +77,7 @@ Pagina que muestra las funciones del superadministrador.
                                               label="elegir" update="imagen" uploadLabel="añadir"
                                               sizeLimit="2097152" 
                                               fileUploadListener="#{controladorLocal.imagenLocal}" 
-                                              value="#{controladorLocal.local.imagen}"/>
+                                              value="#{controladorLocal.local.imagen}" required="true"/>
                                 <h:graphicImage id="imagen" height="200" 
                                                 rendered="#{controladorLocal.local.imagen ne null}"
                                                 value="data:image/png;base64,#{controladorLocal.local.imagenUrl}"/> 
